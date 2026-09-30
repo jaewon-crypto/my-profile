@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SONG JAE WON - 스포츠앤테크놀로지학과 포트폴리오">
+  <title>SONG JAE WON — Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #111111;
+      --muted: #6e6e73;
+      --line: #d8d8d3;
+      --max: 1180px;
+      --nav-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 24px);
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================
+       Navigation
+    ========================= */
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+
+      height: var(--nav-height);
+
+      background: rgba(247, 247, 245, 0.86);
+      border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      width: min(calc(100% - 40px), var(--max));
+      height: 100%;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      font-weight: 600;
+
+      transition: color 180ms ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+
+      width: 100%;
+      height: 1px;
+
+      background: var(--text);
+
+      transform: scaleX(0);
+      transform-origin: left;
+
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Mobile Menu */
+
+    .menu-toggle {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      cursor: pointer;
+
+      width: 42px;
+      height: 42px;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 20px;
+      height: 1.5px;
+
+      background: var(--text);
+
+      transition:
+        transform 180ms ease,
+        opacity 180ms ease;
+    }
+
+    /* =========================
+       Main
+    ========================= */
+
+    main {
+      padding-top: var(--nav-height);
+    }
+
+    section {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+
+      scroll-margin-top: calc(var(--nav-height) + 24px);
+    }
+
+    /* =========================
+       Hero
+    ========================= */
+
+    .hero {
+      min-height: calc(100vh - var(--nav-height));
+
+      display: grid;
+      align-items: center;
+
+      padding: 100px 0 90px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(280px, 0.6fr);
+
+      gap: 80px;
+
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+
+      font-size: clamp(58px, 10vw, 132px);
+      line-height: 0.9;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 700;
+    }
+
+    .hero-intro {
+      margin-top: 44px;
+
+      max-width: 680px;
+
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.45;
+
+      letter-spacing: -0.025em;
+    }
+
+    .hero-meta {
+      border-top: 1px solid var(--line);
+
+      padding-top: 18px;
+    }
+
+    .meta-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .meta-value {
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       Sections
+    ========================= */
+
+    .section {
+      padding: 120px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+
+      grid-template-columns: 260px 1fr;
+
+      gap: 60px;
+
+      margin-bottom: 64px;
+    }
+
+    .section-number {
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 5vw, 64px);
+
+      line-height: 1;
+
+      letter-spacing: -0.05em;
+
+      font-weight: 650;
+    }
+
+    .section-lead {
+      max-width: 720px;
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    /* =========================
+       About
+    ========================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+      gap: 80px;
+    }
+
+    .about-copy {
+      font-size: 22px;
+
+      line-height: 1.65;
+
+      letter-spacing: -0.02em;
+    }
+
+    .info-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .info-row {
+      display: grid;
+
+      grid-template-columns: 130px 1fr;
+
+      gap: 24px;
+
+      padding: 18px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row dt {
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .info-row dd {
+      font-size: 15px;
+
+      font-weight: 600;
+    }
+
+    /* =========================
+       Experience
+    ========================= */
+
+    .experience-card {
+      display: grid;
+
+      grid-template-columns: 260px 1fr;
+
+      gap: 60px;
+
+      padding: 42px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-card:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-index {
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+    }
+
+    .experience-title {
+      font-size: clamp(28px, 3vw, 42px);
+
+      line-height: 1.1;
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 20px;
+    }
+
+    .experience-meta {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+    .experience-text {
+      max-width: 720px;
+
+      font-size: 17px;
+
+      line-height: 1.75;
+    }
+
+    /* =========================
+       Activities
+    ========================= */
+
+    .activity-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
+    }
+
+    .activity-card {
+      background: var(--surface);
+
+      padding: 42px;
+
+      min-height: 250px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    .activity-card h3 {
+      font-size: 28px;
+
+      letter-spacing: -0.035em;
+    }
+
+    .activity-card p {
+      max-width: 520px;
+
+      margin-top: 36px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    /* =========================
+       Certifications / Skills
+    ========================= */
+
+    .cert-grid,
+    .skills-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
+    }
+
+    .cert-card,
+    .skill-card {
+      min-height: 170px;
+
+      padding: 30px;
+
+      background: var(--surface);
+    }
+
+    .cert-card span,
+    .skill-card span {
+      display: block;
+
+      margin-bottom: 18px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .cert-card h3,
+    .skill-card h3 {
+      font-size: 19px;
+
+      letter-spacing: -0.025em;
+    }
+
+    .skill-card {
+      min-height: 190px;
+    }
+
+    .skill-items {
+      list-style: none;
+
+      display: grid;
+
+      gap: 7px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+    }
+
+    /* =========================
+       Career
+    ========================= */
+
+    .career-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
+    }
+
+    .career-card {
+      background: var(--surface);
+
+      min-height: 320px;
+
+      padding: 42px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    .career-card .label {
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .career-card h3 {
+      font-size: clamp(30px, 4vw, 48px);
+
+      line-height: 1.05;
+
+      letter-spacing: -0.05em;
+    }
+
+    .career-card p {
+      max-width: 500px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+    }
+
+    /* =========================
+       Contact
+    ========================= */
+
+    .contact {
+      padding-bottom: 90px;
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: end;
+    }
+
+    .contact-title {
+      font-size: clamp(48px, 7vw, 92px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.065em;
+    }
+
+    .contact-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 24px;
+
+      padding: 18px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row span:first-child {
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+    }
+
+    .contact-row span:last-child {
+      text-align: right;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      width: min(calc(100% - 40px), var(--max));
+
+      margin: 0 auto;
+
+      padding: 30px 0 44px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    /* =========================
+       Scroll Animation
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(18px);
+
+      transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* =========================
+       Tablet
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: fixed;
+
+        top: var(--nav-height);
+
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        padding: 18px 20px 26px;
+
+        background: rgba(247, 247, 245, 0.97);
+
+        border-bottom: 1px solid var(--line);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 90px 0 80px;
+      }
+
+      .section {
+        padding: 90px 0;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-bottom: 44px;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+      }
+
+      .cert-grid,
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      :root {
+        --nav-height: 64px;
+      }
+
+      .nav-inner,
+      section,
+      footer {
+        width: min(calc(100% - 32px), var(--max));
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: clamp(52px, 18vw, 84px);
+      }
+
+      .hero-intro {
+        margin-top: 30px;
+
+        font-size: 18px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .about-copy {
+        font-size: 19px;
+      }
+
+      .activity-grid,
+      .cert-grid,
+      .skills-grid,
+      .career-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-card,
+      .cert-card,
+      .skill-card,
+      .career-card {
+        min-height: auto;
+
+        padding: 28px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+      }
+
+      .contact-grid {
+        gap: 40px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    /* 접근성 */
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       Fixed Navigation
+  ========================== -->
+
+  <header class="nav">
+
+    <div class="nav-inner">
+
+      <a
+        class="brand"
+        href="#home"
+        aria-label="SONG JAE WON Home"
+      >
+        SONG JAE WON
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav aria-label="주요 메뉴">
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#home">Home</a>
+          </li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#education">Education</a>
+          </li>
+
+          <li>
+            <a href="#experience">Experience</a>
+          </li>
+
+          <li>
+            <a href="#activities">Activities</a>
+          </li>
+
+          <li>
+            <a href="#certifications">Certifications</a>
+          </li>
+
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+
+          <li>
+            <a href="#career">Career Goal</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section
+      id="home"
+      class="hero"
+    >
+
+      <div class="hero-grid reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            Sports &amp; Technology
+          </p>
+
+          <h1>
+            SONG<br>
+            JAE WON
+          </h1>
+
+          <p class="hero-intro">
+            맡은 바를 끝까지 책임감 있게 처리하며,
+            완벽하게 마무리할 수 있습니다.
+          </p>
+
+        </div>
+
+        <div class="hero-meta">
+
+          <span class="meta-label">
+            Major
+          </span>
+
+          <span class="meta-value">
+            스포츠앤테크놀로지학과
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+      id="about"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          01 / ABOUT
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            About Me
+          </h2>
+
+          <p class="section-lead">
+            책임감과 사명감을 바탕으로 스포츠 분야의 경험을 쌓아왔습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="about-grid reveal">
+
+        <p class="about-copy">
+          저는 어떠한 업무를 맡더라도 책임감과 사명감을 가지고
+          끝까지 완수하는 것을 중요하게 생각합니다.
+          어렸을 때부터 야구와 축구 등 다양한 구기종목을 경험했으며,
+          체대입시를 통해 서경대학교 스포츠앤테크놀로지학과에 진학했습니다.
+        </p>
+
+
+        <dl class="info-list">
+
+          <div class="info-row">
+
+            <dt>
+              관심 분야
+            </dt>
+
+            <dd>
+              운동분야(체육)
+            </dd>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <dt>
+              강점
+            </dt>
+
+            <dd>
+              전공인 체육관련 스포츠 활동과 장교 사관후보생인
+              책임감을 갖는 일에 대해 자부심이 있습니다.
+            </dd>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <dt>
+              희망 진로
+            </dt>
+
+            <dd>
+              선수 코칭, 센서 관련 연구원
+            </dd>
+
+          </div>
+
+        </dl>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section
+      id="education"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          02 / EDUCATION
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Education
+          </h2>
+
+          <p class="section-lead">
+            전공 교육을 통해 스포츠와 기술을 함께 다루고 있습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="experience-card reveal">
+
+        <div class="experience-index">
+          EDUCATION
+        </div>
+
+        <div>
+
+          <h3 class="experience-title">
+            서경대학교
+          </h3>
+
+          <p class="experience-meta">
+            스포츠앤테크놀로지
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section
+      id="experience"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          03 / EXPERIENCE
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Experience
+          </h2>
+
+          <p class="section-lead">
+            체대입시학원 강사로 학생별 목표에 맞춘 1대1 코칭을 진행했습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <article class="experience-card reveal">
+
+        <div class="experience-index">
+          01 / 3 YEARS
+        </div>
+
+        <div>
+
+          <h3 class="experience-title">
+            입시강사
+          </h3>
+
+          <p class="experience-meta">
+            체대입시학원 · 3년 경험
+          </p>
+
+          <p class="experience-text">
+            진학 대학의 담당 강사로 학생들의 대학진학에 필요한
+            운동, 몸, 성적에 대해 컨설팅 해주었다.
+            담당 강사로 학생별 1대1일 코칭을 진행했으며,
+            활동을 통해 책임감과 학생들의 합격으로 인한
+            성취감을 경험했습니다.
+          </p>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         ACTIVITIES
+    ========================== -->
+
+    <section
+      id="activities"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          04 / ACTIVITIES
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Activities
+          </h2>
+
+          <p class="section-lead">
+            스포츠 활동과 학생회 경험을 통해 전공과 현장 경험을 이어왔습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="activity-grid reveal">
+
+        <article class="activity-card">
+
+          <h3>
+            야구부 동아리
+          </h3>
+
+          <p>
+            야구부 동아리 활동을 경험했습니다.
+          </p>
+
+        </article>
+
+
+        <article class="activity-card">
+
+          <h3>
+            체육담당 학생회
+          </h3>
+
+          <p>
+            체육담당 학생회를 경험했습니다.
+          </p>
+
+        </article>
+
+
+        <article class="activity-card">
+
+          <h3>
+            스포츠 활동
+          </h3>
+
+          <p>
+            어렸을 때부터 야구, 축구와 같은 구기종목을 해왔으며
+            체대입시로 체대에 진학 후 입시 강사 경험이 있습니다.
+          </p>
+
+        </article>
+
+
+        <article class="activity-card">
+
+          <h3>
+            스포츠 지도
+          </h3>
+
+          <p>
+            체대입시학원 강사로 학생들의 운동, 몸, 성적에 대해
+            컨설팅하고 학생별 1대1일 코칭을 진행했습니다.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================== -->
+
+    <section
+      id="certifications"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          05 / CERTIFICATIONS
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Certifications
+          </h2>
+
+          <p class="section-lead">
+            스포츠 현장과 신체 관리에 관련된 자격을 보유하고 있습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cert-grid reveal">
+
+        <article class="cert-card">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            스포츠테이핑 자격증
+          </h3>
+
+        </article>
+
+
+        <article class="cert-card">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            체형관리 자격증
+          </h3>
+
+        </article>
+
+
+        <article class="cert-card">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            스포츠마사지 자격증
+          </h3>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section
+      id="skills"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          06 / SKILLS
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Skills
+          </h2>
+
+          <p class="section-lead">
+            문서·AI 도구부터 스포츠 장비와 데이터 분석까지 활용할 수 있습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="skills-grid reveal">
+
+        <article class="skill-card">
+
+          <span>
+            Programs / AI
+          </span>
+
+          <ul class="skill-items">
+
+            <li>
+              PPT
+            </li>
+
+            <li>
+              한글
+            </li>
+
+            <li>
+              CHAT GPT
+            </li>
+
+            <li>
+              제미나이
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <span>
+            Sports
+          </span>
+
+          <ul class="skill-items">
+
+            <li>
+              기록측정센서
+            </li>
+
+            <li>
+              운동·스포츠 지도
+            </li>
+
+          </ul>
+
+        </article>
+
+
+        <article class="skill-card">
+
+          <span>
+            Data
+          </span>
+
+          <ul class="skill-items">
+
+            <li>
+              데이터 분석
+            </li>
+
+            <li>
+              영상·디자인
+            </li>
+
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAREER GOAL
+    ========================== -->
+
+    <section
+      id="career"
+      class="section"
+    >
+
+      <div class="section-head reveal">
+
+        <div class="section-number">
+          07 / CAREER GOAL
+        </div>
+
+        <div>
+
+          <h2 class="section-title">
+            Career Goal
+          </h2>
+
+          <p class="section-lead">
+            스포츠 현장 경험을 바탕으로 선수 코칭과
+            센서 관련 연구 분야를 희망합니다.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="career-grid reveal">
+
+        <article class="career-card">
+
+          <span class="label">
+            01 / Coaching
+          </span>
+
+          <h3>
+            선수 코칭
+          </h3>
+
+          <p>
+            스포츠 활동과 지도 경험을 바탕으로
+            선수 코칭 분야를 희망합니다.
+          </p>
+
+        </article>
+
+
+        <article class="career-card">
+
+          <span class="label">
+            02 / Research
+          </span>
+
+          <h3>
+            센서 관련 연구원
+          </h3>
+
+          <p>
+            스포츠와 기록측정센서 및 데이터 분석을 바탕으로
+            센서 관련 연구원 분야를 희망합니다.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+      id="contact"
+      class="section contact"
+    >
+
+      <div class="contact-grid reveal">
+
+        <div>
+
+          <p class="eyebrow">
+            Contact
+          </p>
+
+          <h2 class="contact-title">
+            Let's<br>
+            Connect.
+          </h2>
+
+        </div>
+
+
+        <div class="contact-list">
+
+          <div class="contact-row">
+
+            <span>
+              Phone
+            </span>
+
+            <span>
+              010 5803 0347
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <span>
+              Email
+            </span>
+
+            <span>
+              JAEWON01058030324@GMAI.COM
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <span>
+              Instagram
+            </span>
+
+            <span>
+              ______JXXWXX
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer>
+
+    <span>
+      SONG JAE WON
+    </span>
+
+    <span>
+      Sports &amp; Technology
+    </span>
+
+  </footer>
+
+
+  <!-- =========================
+       JavaScript
+  ========================== -->
+
+  <script>
+
+    /*
+      모바일 메뉴
+    */
+
+    const menuToggle =
+      document.querySelector(".menu-toggle");
+
+    const navLinks =
+      document.querySelector(".nav-links");
+
+    const links =
+      document.querySelectorAll(".nav-links a");
+
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen =
+        navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen
+          ? "메뉴 닫기"
+          : "메뉴 열기"
+      );
+
+    });
+
+
+    /*
+      모바일 메뉴에서 링크를 클릭하면
+      메뉴 닫기
+    */
+
+    links.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "메뉴 열기"
+        );
+
+      });
+
+    });
+
+
+    /*
+      현재 보고 있는 섹션에 해당하는
+      Navigation 메뉴 활성화
+    */
+
+    const sections =
+      document.querySelectorAll(
+        "main section[id]"
+      );
+
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              links.forEach(link => {
+
+                link.classList.toggle(
+
+                  "active",
+
+                  link.getAttribute("href") ===
+                  "#" + entry.target.id
+
+                );
+
+              });
+
+            }
+
+          });
+
+        },
+
+        {
+          rootMargin:
+            "-35% 0px -55% 0px",
+
+          threshold: 0
+        }
+
+      );
+
+
+    sections.forEach(section => {
+
+      observer.observe(section);
+
+    });
+
+
+    /*
+      스크롤 진입 애니메이션
+    */
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.08
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        revealObserver.observe(element);
+
+      });
+
+  </script>
+
+</body>
+</html>
