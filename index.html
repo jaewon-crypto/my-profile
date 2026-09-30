@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SONG JAE WON - 스포츠앤테크놀로지학과 포트폴리오">
+
+  <meta
+    name="description"
+    content="SONG JAE WON - 스포츠앤테크놀로지학과 포트폴리오"
+  >
+
   <title>SONG JAE WON — Portfolio</title>
 
   <style>
@@ -25,7 +30,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: calc(var(--nav-height) + 24px);
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -55,12 +60,14 @@
     }
 
     /* =========================
-       Navigation
+       NAVIGATION
     ========================= */
 
     .nav {
       position: fixed;
-      inset: 0 0 auto 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
 
       height: var(--nav-height);
@@ -102,11 +109,10 @@
       position: relative;
 
       color: var(--muted);
-
       font-size: 13px;
       font-weight: 600;
 
-      transition: color 180ms ease;
+      transition: color 0.2s ease;
     }
 
     .nav-links a::after {
@@ -124,7 +130,7 @@
       transform: scaleX(0);
       transform-origin: left;
 
-      transition: transform 180ms ease;
+      transition: transform 0.2s ease;
     }
 
     .nav-links a:hover,
@@ -137,22 +143,21 @@
       transform: scaleX(1);
     }
 
-    /* Mobile Menu */
+    /* Mobile menu */
 
     .menu-toggle {
       display: none;
+
+      width: 42px;
+      height: 42px;
 
       border: 0;
       background: transparent;
 
       cursor: pointer;
 
-      width: 42px;
-      height: 42px;
-
       align-items: center;
       justify-content: center;
-
       flex-direction: column;
       gap: 5px;
     }
@@ -164,12 +169,12 @@
       background: var(--text);
 
       transition:
-        transform 180ms ease,
-        opacity 180ms ease;
+        transform 0.2s ease,
+        opacity 0.2s ease;
     }
 
     /* =========================
-       Main
+       COMMON
     ========================= */
 
     main {
@@ -180,11 +185,62 @@
       width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
 
-      scroll-margin-top: calc(var(--nav-height) + 24px);
+      scroll-margin-top: 100px;
+    }
+
+    .section {
+      padding: 120px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+
+      gap: 60px;
+      margin-bottom: 64px;
+    }
+
+    .section-number {
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 5vw, 64px);
+
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 650;
+    }
+
+    .section-lead {
+      max-width: 720px;
+
+      margin-top: 22px;
+
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     /* =========================
-       Hero
+       HERO
     ========================= */
 
     .hero {
@@ -210,26 +266,13 @@
       align-items: end;
     }
 
-    .eyebrow {
-      margin-bottom: 24px;
-
-      color: var(--muted);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
     .hero h1 {
       max-width: 900px;
 
       font-size: clamp(58px, 10vw, 132px);
+
       line-height: 0.9;
-
       letter-spacing: -0.065em;
-
       font-weight: 700;
     }
 
@@ -239,9 +282,43 @@
       max-width: 680px;
 
       font-size: clamp(18px, 2vw, 25px);
-      line-height: 1.45;
 
+      line-height: 1.45;
       letter-spacing: -0.025em;
+    }
+
+    /* Profile */
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+
+      gap: 28px;
+
+      align-self: end;
+    }
+
+    .profile-photo {
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      display: block;
+
+      background: #e9e9e6;
+
+      border-radius: 2px;
+    }
+
+    .photo-caption {
+      color: var(--muted);
+
+      font-size: 11px;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .hero-meta {
@@ -270,56 +347,7 @@
     }
 
     /* =========================
-       Sections
-    ========================= */
-
-    .section {
-      padding: 120px 0;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-
-      grid-template-columns: 260px 1fr;
-
-      gap: 60px;
-
-      margin-bottom: 64px;
-    }
-
-    .section-number {
-      color: var(--muted);
-
-      font-size: 12px;
-      font-weight: 700;
-
-      letter-spacing: 0.12em;
-    }
-
-    .section-title {
-      font-size: clamp(38px, 5vw, 64px);
-
-      line-height: 1;
-
-      letter-spacing: -0.05em;
-
-      font-weight: 650;
-    }
-
-    .section-lead {
-      max-width: 720px;
-
-      margin-top: 22px;
-
-      color: var(--muted);
-
-      font-size: 17px;
-    }
-
-    /* =========================
-       About
+       ABOUT
     ========================= */
 
     .about-grid {
@@ -366,12 +394,11 @@
 
     .info-row dd {
       font-size: 15px;
-
       font-weight: 600;
     }
 
     /* =========================
-       Experience
+       EXPERIENCE
     ========================= */
 
     .experience-card {
@@ -403,7 +430,6 @@
       font-size: clamp(28px, 3vw, 42px);
 
       line-height: 1.1;
-
       letter-spacing: -0.04em;
 
       margin-bottom: 20px;
@@ -426,7 +452,7 @@
     }
 
     /* =========================
-       Activities
+       ACTIVITIES
     ========================= */
 
     .activity-grid {
@@ -449,7 +475,6 @@
       min-height: 250px;
 
       display: flex;
-
       flex-direction: column;
 
       justify-content: space-between;
@@ -472,7 +497,7 @@
     }
 
     /* =========================
-       Certifications / Skills
+       CERTIFICATIONS
     ========================= */
 
     .cert-grid,
@@ -509,7 +534,6 @@
       font-weight: 700;
 
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
     }
 
@@ -519,6 +543,10 @@
 
       letter-spacing: -0.025em;
     }
+
+    /* =========================
+       SKILLS
+    ========================= */
 
     .skill-card {
       min-height: 190px;
@@ -537,7 +565,7 @@
     }
 
     /* =========================
-       Career
+       CAREER
     ========================= */
 
     .career-grid {
@@ -560,7 +588,6 @@
       padding: 42px;
 
       display: flex;
-
       flex-direction: column;
 
       justify-content: space-between;
@@ -573,7 +600,6 @@
       font-weight: 700;
 
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
     }
 
@@ -581,7 +607,6 @@
       font-size: clamp(30px, 4vw, 48px);
 
       line-height: 1.05;
-
       letter-spacing: -0.05em;
     }
 
@@ -594,7 +619,7 @@
     }
 
     /* =========================
-       Contact
+       CONTACT
     ========================= */
 
     .contact {
@@ -650,14 +675,13 @@
       text-align: right;
 
       font-size: 14px;
-
       font-weight: 600;
 
       overflow-wrap: anywhere;
     }
 
     /* =========================
-       Footer
+       FOOTER
     ========================= */
 
     footer {
@@ -665,31 +689,31 @@
 
       margin: 0 auto;
 
-      padding: 30px 0 44px;
-
-      color: var(--muted);
-
-      font-size: 12px;
+      padding: 28px 0 40px;
 
       display: flex;
 
       justify-content: space-between;
 
       gap: 20px;
+
+      color: var(--muted);
+
+      font-size: 12px;
     }
 
     /* =========================
-       Scroll Animation
+       SCROLL ANIMATION
     ========================= */
 
     .reveal {
       opacity: 0;
 
-      transform: translateY(18px);
+      transform: translateY(24px);
 
       transition:
-        opacity 700ms ease,
-        transform 700ms ease;
+        opacity 0.8s ease,
+        transform 0.8s ease;
     }
 
     .reveal.visible {
@@ -699,132 +723,213 @@
     }
 
     /* =========================
-       Tablet
+       TABLET
     ========================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1050px) {
 
       .nav-links {
-        position: fixed;
-
-        top: var(--nav-height);
-
-        left: 0;
-        right: 0;
-
-        display: none;
-
-        padding: 18px 20px 26px;
-
-        background: rgba(247, 247, 245, 0.97);
-
-        border-bottom: 1px solid var(--line);
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 18px;
+        gap: 16px;
       }
 
-      .nav-links.open {
-        display: flex;
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        gap: 50px;
+      }
+
+      .section-head {
+        grid-template-columns: 180px 1fr;
+
+        gap: 40px;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      :root {
+        --nav-height: 64px;
+      }
+
+      .nav-inner {
+        width: min(calc(100% - 28px), var(--max));
       }
 
       .menu-toggle {
         display: flex;
       }
 
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .nav-links {
+        position: absolute;
 
-        gap: 50px;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 12px 20px 20px;
+
+        background: rgba(247, 247, 245, 0.96);
+
+        border-bottom: 1px solid var(--line);
+
+        backdrop-filter: blur(18px);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 0;
+
+        font-size: 14px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      section {
+        width: min(calc(100% - 28px), var(--max));
       }
 
       .hero {
         min-height: auto;
 
-        padding: 90px 0 80px;
+        padding: 70px 0 70px;
       }
 
-      .section {
-        padding: 90px 0;
-      }
-
-      .section-head {
+      .hero-grid {
         grid-template-columns: 1fr;
 
-        gap: 18px;
-
-        margin-bottom: 44px;
-      }
-
-      .experience-card {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-      }
-
-      .cert-grid,
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* =========================
-       Mobile
-    ========================= */
-
-    @media (max-width: 600px) {
-
-      :root {
-        --nav-height: 64px;
-      }
-
-      .nav-inner,
-      section,
-      footer {
-        width: min(calc(100% - 32px), var(--max));
-      }
-
-      .brand {
-        font-size: 12px;
+        gap: 50px;
       }
 
       .hero h1 {
-        font-size: clamp(52px, 18vw, 84px);
+        font-size: clamp(54px, 18vw, 100px);
       }
 
       .hero-intro {
-        margin-top: 30px;
+        margin-top: 32px;
 
-        font-size: 18px;
+        font-size: 19px;
+      }
+
+      .hero-side {
+        max-width: 420px;
       }
 
       .section {
-        padding: 76px 0;
+        padding: 80px 0;
+      }
+
+      .section-head {
+        display: block;
+
+        margin-bottom: 42px;
+      }
+
+      .section-number {
+        margin-bottom: 20px;
+      }
+
+      .section-lead {
+        font-size: 15px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
       }
 
       .about-copy {
         font-size: 19px;
       }
 
+      .info-row {
+        grid-template-columns: 100px 1fr;
+
+        gap: 16px;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 32px 0;
+      }
+
       .activity-grid,
-      .cert-grid,
-      .skills-grid,
       .career-grid {
         grid-template-columns: 1fr;
       }
 
-      .activity-card,
-      .cert-card,
-      .skill-card,
-      .career-card {
-        min-height: auto;
+      .cert-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
 
-        padding: 28px;
+      .activity-card,
+      .career-card {
+        min-height: 220px;
+
+        padding: 30px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      footer {
+        width: min(calc(100% - 28px), var(--max));
+
+        flex-direction: column;
+
+        gap: 8px;
+      }
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .section-title {
+        font-size: 42px;
+      }
+
+      .contact-title {
+        font-size: 56px;
       }
 
       .info-row {
@@ -833,16 +938,21 @@
         gap: 5px;
       }
 
-      .contact-grid {
-        gap: 40px;
+      .contact-row {
+        flex-direction: column;
+
+        gap: 6px;
       }
 
-      footer {
-        flex-direction: column;
+      .contact-row span:last-child {
+        text-align: left;
       }
     }
 
-    /* 접근성 */
+    /* =========================
+       REDUCED MOTION
+    ========================= */
+
     @media (prefers-reduced-motion: reduce) {
 
       html {
@@ -851,9 +961,7 @@
 
       .reveal {
         opacity: 1;
-
         transform: none;
-
         transition: none;
       }
     }
@@ -863,8 +971,8 @@
 <body>
 
   <!-- =========================
-       Fixed Navigation
-  ========================== -->
+       NAVIGATION
+  ========================= -->
 
   <header class="nav">
 
@@ -942,12 +1050,9 @@
 
     <!-- =========================
          HOME
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="home"
-      class="hero"
-    >
+    <section id="home" class="hero">
 
       <div class="hero-grid reveal">
 
@@ -963,21 +1068,36 @@
           </h1>
 
           <p class="hero-intro">
-            맡은 바를 끝까지 책임감 있게 처리하며,
-            완벽하게 마무리할 수 있습니다.
+            맡은 바를 끝까지 책임감있게 처리하며 완벽하게 마무리 할 수 있습니다.
           </p>
 
         </div>
 
-        <div class="hero-meta">
 
-          <span class="meta-label">
-            Major
+        <div class="hero-side">
+
+          <!-- 프로필 이미지 -->
+          <img
+            class="profile-photo"
+            src="./images.jpg"
+            alt="SONG JAE WON 프로필 이미지"
+          >
+
+          <span class="photo-caption">
+            images.jpg
           </span>
 
-          <span class="meta-value">
-            스포츠앤테크놀로지학과
-          </span>
+          <div class="hero-meta">
+
+            <span class="meta-label">
+              Major
+            </span>
+
+            <span class="meta-value">
+              스포츠앤테크놀로지학과
+            </span>
+
+          </div>
 
         </div>
 
@@ -988,12 +1108,9 @@
 
     <!-- =========================
          ABOUT
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="about"
-      class="section"
-    >
+    <section id="about" class="section">
 
       <div class="section-head reveal">
 
@@ -1019,10 +1136,9 @@
       <div class="about-grid reveal">
 
         <p class="about-copy">
-          저는 어떠한 업무를 맡더라도 책임감과 사명감을 가지고
-          끝까지 완수하는 것을 중요하게 생각합니다.
-          어렸을 때부터 야구와 축구 등 다양한 구기종목을 경험했으며,
-          체대입시를 통해 서경대학교 스포츠앤테크놀로지학과에 진학했습니다.
+          어떠한 업무를 받던 책임감과 사명감있게 일을 완벽히 마무리 합니다.
+          어릴 때부터 야구, 축구 등 구기종목을 해왔으며
+          체대입시로 체대에 진학 후 입시 강사 경험이 있습니다.
         </p>
 
 
@@ -1076,12 +1192,9 @@
 
     <!-- =========================
          EDUCATION
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="education"
-      class="section"
-    >
+    <section id="education" class="section">
 
       <div class="section-head reveal">
 
@@ -1094,10 +1207,6 @@
           <h2 class="section-title">
             Education
           </h2>
-
-          <p class="section-lead">
-            전공 교육을 통해 스포츠와 기술을 함께 다루고 있습니다.
-          </p>
 
         </div>
 
@@ -1129,12 +1238,9 @@
 
     <!-- =========================
          EXPERIENCE
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="experience"
-      class="section"
-    >
+    <section id="experience" class="section">
 
       <div class="section-head reveal">
 
@@ -1149,7 +1255,7 @@
           </h2>
 
           <p class="section-lead">
-            체대입시학원 강사로 학생별 목표에 맞춘 1대1 코칭을 진행했습니다.
+            체대입시학원 강사 3년 경험
           </p>
 
         </div>
@@ -1174,11 +1280,9 @@
           </p>
 
           <p class="experience-text">
-            진학 대학의 담당 강사로 학생들의 대학진학에 필요한
-            운동, 몸, 성적에 대해 컨설팅 해주었다.
-            담당 강사로 학생별 1대1일 코칭을 진행했으며,
-            활동을 통해 책임감과 학생들의 합격으로 인한
-            성취감을 경험했습니다.
+            진학 대학 담당 강사로 학생들의 운동, 몸, 성적에 대해
+            컨설팅 해주었다. 담당 강사로 1:1 코칭을 진행했으며,
+            활동을 통해 책임감과 학생들의 합격으로 인한 성취감을 경험했습니다.
           </p>
 
         </div>
@@ -1190,12 +1294,9 @@
 
     <!-- =========================
          ACTIVITIES
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="activities"
-      class="section"
-    >
+    <section id="activities" class="section">
 
       <div class="section-head reveal">
 
@@ -1208,10 +1309,6 @@
           <h2 class="section-title">
             Activities
           </h2>
-
-          <p class="section-lead">
-            스포츠 활동과 학생회 경험을 통해 전공과 현장 경험을 이어왔습니다.
-          </p>
 
         </div>
 
@@ -1227,7 +1324,7 @@
           </h3>
 
           <p>
-            야구부 동아리 활동을 경험했습니다.
+            야구부 동아리
           </p>
 
         </article>
@@ -1240,7 +1337,7 @@
           </h3>
 
           <p>
-            체육담당 학생회를 경험했습니다.
+            체육담당 학생회
           </p>
 
         </article>
@@ -1253,7 +1350,7 @@
           </h3>
 
           <p>
-            어렸을 때부터 야구, 축구와 같은 구기종목을 해왔으며
+            어릴 때부터 야구, 축구 등 구기종목을 해왔으며
             체대입시로 체대에 진학 후 입시 강사 경험이 있습니다.
           </p>
 
@@ -1263,12 +1360,12 @@
         <article class="activity-card">
 
           <h3>
-            스포츠 지도
+            입시강사
           </h3>
 
           <p>
-            체대입시학원 강사로 학생들의 운동, 몸, 성적에 대해
-            컨설팅하고 학생별 1대1일 코칭을 진행했습니다.
+            학생들의 운동, 몸, 성적에 대해 컨설팅하고
+            1:1 코칭을 진행했습니다.
           </p>
 
         </article>
@@ -1280,12 +1377,9 @@
 
     <!-- =========================
          CERTIFICATIONS
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="certifications"
-      class="section"
-    >
+    <section id="certifications" class="section">
 
       <div class="section-head reveal">
 
@@ -1298,10 +1392,6 @@
           <h2 class="section-title">
             Certifications
           </h2>
-
-          <p class="section-lead">
-            스포츠 현장과 신체 관리에 관련된 자격을 보유하고 있습니다.
-          </p>
 
         </div>
 
@@ -1355,12 +1445,9 @@
 
     <!-- =========================
          SKILLS
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="skills"
-      class="section"
-    >
+    <section id="skills" class="section">
 
       <div class="section-head reveal">
 
@@ -1373,10 +1460,6 @@
           <h2 class="section-title">
             Skills
           </h2>
-
-          <p class="section-lead">
-            문서·AI 도구부터 스포츠 장비와 데이터 분석까지 활용할 수 있습니다.
-          </p>
 
         </div>
 
@@ -1438,7 +1521,7 @@
         <article class="skill-card">
 
           <span>
-            Data
+            Data / Media
           </span>
 
           <ul class="skill-items">
@@ -1462,12 +1545,9 @@
 
     <!-- =========================
          CAREER GOAL
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="career"
-      class="section"
-    >
+    <section id="career" class="section">
 
       <div class="section-head reveal">
 
@@ -1480,11 +1560,6 @@
           <h2 class="section-title">
             Career Goal
           </h2>
-
-          <p class="section-lead">
-            스포츠 현장 경험을 바탕으로 선수 코칭과
-            센서 관련 연구 분야를 희망합니다.
-          </p>
 
         </div>
 
@@ -1504,8 +1579,7 @@
           </h3>
 
           <p>
-            스포츠 활동과 지도 경험을 바탕으로
-            선수 코칭 분야를 희망합니다.
+            선수 코칭
           </p>
 
         </article>
@@ -1522,8 +1596,7 @@
           </h3>
 
           <p>
-            스포츠와 기록측정센서 및 데이터 분석을 바탕으로
-            센서 관련 연구원 분야를 희망합니다.
+            센서 관련 연구원
           </p>
 
         </article>
@@ -1535,12 +1608,9 @@
 
     <!-- =========================
          CONTACT
-    ========================== -->
+    ========================= -->
 
-    <section
-      id="contact"
-      class="section contact"
-    >
+    <section id="contact" class="section contact">
 
       <div class="contact-grid reveal">
 
@@ -1608,8 +1678,8 @@
 
 
   <!-- =========================
-       Footer
-  ========================== -->
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -1625,14 +1695,12 @@
 
 
   <!-- =========================
-       JavaScript
-  ========================== -->
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
-    /*
-      모바일 메뉴
-    */
+    /* 모바일 메뉴 */
 
     const menuToggle =
       document.querySelector(".menu-toggle");
@@ -1656,18 +1724,13 @@
 
       menuToggle.setAttribute(
         "aria-label",
-        isOpen
-          ? "메뉴 닫기"
-          : "메뉴 열기"
+        isOpen ? "메뉴 닫기" : "메뉴 열기"
       );
 
     });
 
 
-    /*
-      모바일 메뉴에서 링크를 클릭하면
-      메뉴 닫기
-    */
+    /* 메뉴 클릭 시 모바일 메뉴 닫기 */
 
     links.forEach(link => {
 
@@ -1690,15 +1753,10 @@
     });
 
 
-    /*
-      현재 보고 있는 섹션에 해당하는
-      Navigation 메뉴 활성화
-    */
+    /* 현재 섹션 메뉴 활성화 */
 
     const sections =
-      document.querySelectorAll(
-        "main section[id]"
-      );
+      document.querySelectorAll("main section[id]");
 
 
     const observer =
@@ -1713,12 +1771,9 @@
               links.forEach(link => {
 
                 link.classList.toggle(
-
                   "active",
-
                   link.getAttribute("href") ===
-                  "#" + entry.target.id
-
+                    "#" + entry.target.id
                 );
 
               });
@@ -1730,9 +1785,7 @@
         },
 
         {
-          rootMargin:
-            "-35% 0px -55% 0px",
-
+          rootMargin: "-35% 0px -55% 0px",
           threshold: 0
         }
 
@@ -1746,9 +1799,7 @@
     });
 
 
-    /*
-      스크롤 진입 애니메이션
-    */
+    /* 스크롤 등장 애니메이션 */
 
     const revealObserver =
       new IntersectionObserver(
@@ -1759,9 +1810,7 @@
 
             if (entry.isIntersecting) {
 
-              entry.target.classList.add(
-                "visible"
-              );
+              entry.target.classList.add("visible");
 
               revealObserver.unobserve(
                 entry.target
